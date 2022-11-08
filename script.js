@@ -2,6 +2,8 @@
 
     const botao = document.getElementById('criar-tarefa');
 
+    const btnLimpaLista = document.getElementById('apaga-tudo');
+
     const listaOrdenada = document.getElementById('lista-tarefas');
     
     botao.addEventListener('click', criarElemento);
@@ -30,4 +32,8 @@
             classe.classList.add('completed');
               }
             }) ;
-       
+
+    btnLimpaLista.addEventListener('click', limpaLista)       
+    function limpaLista() {
+      listaOrdenada.innerHTML = '';
+    }
