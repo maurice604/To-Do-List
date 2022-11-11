@@ -5,6 +5,9 @@
     const btnLimpaLista = document.getElementById('apaga-tudo');
 
     const listaOrdenada = document.getElementById('lista-tarefas');
+
+    const btnLimpaCompletos = document.getElementById('remover-finalizados');
+
     
     botao.addEventListener('click', criarElemento);
 
@@ -36,4 +39,14 @@
     btnLimpaLista.addEventListener('click', limpaLista)       
     function limpaLista() {
       listaOrdenada.innerHTML = '';
+    }
+
+    btnLimpaCompletos.addEventListener('click', limpaCompletos)
+    function limpaCompletos() {
+      let  linha =document.querySelectorAll('li');
+             for (let index = 0; index < linha.length;index += 1){
+                if (linha[index].classList.contains('completed')){
+                  linha[index].remove();
+                }
+        }
     }
